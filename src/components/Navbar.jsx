@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from React Router
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -8,11 +9,11 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { href: 'index.html', label: 'Home' },
-    { href: 'calculator.html', label: 'Budget Calculator' },
-    { href: 'saved-plans.html', label: 'Saved Plans' },
-    { href: 'login.html', label: 'Login' },
-    { href: 'sign-up.html', label: 'Signup' }
+    { to: '/', label: 'Home' },
+    { to: '/calculator', label: 'Budget Calculator' },
+    { to: '/saved-plans', label: 'Saved Plans' },
+    { to: '/login', label: 'Login' },
+    { to: '/sign-up', label: 'Signup' },
   ];
 
   return (
@@ -34,14 +35,14 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <ul className="hidden md:flex items-center space-x-6">
         {navLinks.map((link) => (
-          <li key={link.href} className="relative group">
-            <a 
-              href={link.href} 
+          <li key={link.to} className="relative group">
+            <Link 
+              to={link.to} 
               className="text-white font-medium transition-colors group-hover:text-amber-500 relative"
             >
               {link.label}
               <span className="absolute bottom-[-5px] left-0 h-0.5 bg-amber-500 w-0 group-hover:w-full transition-all duration-300"></span>
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -57,14 +58,14 @@ const Navbar = () => {
           </button>
           <ul className="space-y-6 text-center">
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <a 
-                  href={link.href} 
+              <li key={link.to}>
+                <Link 
+                  to={link.to} 
                   className="text-white text-2xl font-medium hover:text-amber-500 transition-colors"
                   onClick={toggleMobileMenu}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

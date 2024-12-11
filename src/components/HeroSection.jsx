@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChartPie, Calculator, Save } from 'lucide-react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const HeroSection = () => {
   const advantages = [
@@ -58,13 +59,13 @@ const HeroSection = () => {
           </div>
 
           {/* Call to Action Button */}
-          <a 
-            href="/calculator.html" 
+          <Link 
+            to="/calculator" 
             className="inline-block px-8 py-4 bg-amber-500 text-black rounded-full font-bold text-lg 
                        hover:bg-amber-600 transition-all duration-300 hover:scale-105 hover:shadow-lg"
           >
             Start Planning Now
-          </a>
+          </Link>
         </div>
       </div>
     </section>
