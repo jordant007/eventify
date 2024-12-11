@@ -13,7 +13,7 @@ const SavedPlans = () => {
     setSavedPlans(plans);
   }, []);
 
-  // Handle deleting a specific plan
+  
   const handleDeletePlan = (id) => {
     const updatedPlans = savedPlans.filter((plan) => plan.id !== id);
     setSavedPlans(updatedPlans);
