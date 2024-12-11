@@ -35,7 +35,7 @@ const SignUp = () => {
 
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/login"); // Redirect to login or homepage
+      navigate("/login"); 
     } catch (err) {
       let errorMessage = "An error occurred.";
       switch (err.code) {
