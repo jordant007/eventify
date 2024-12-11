@@ -18,7 +18,7 @@ const Login = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/"); // Navigate to the home page on successful login
+      navigate("/");
     } catch (err) {
       setError("Invalid email or password. Please try again.");
     }
